@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css" >
+    </head>
+
+    <body>
+        
+        <div id="app">
+        <div id="creation_form">
+            <a id="creation_button" v-on:click="create_new_user('creation_form','creation_button')"><img src="../image/icon_plus_sign.jpg" alt="" width="40px" height="40px"></a>
+        </div>
+            <table>
+                <thead style="background-color: azure;">
+                    <th id="id_head">№</th>
+                    <th id="surname_head">Фамилия</th>
+                    <th id="name_head">Имя</th>
+                    <th id="secondname_head">Отчество</th>
+                    <th id="spec_head">Должность</th>
+                    <th id="salary_head">Оклад</th>
+                    <th id="status_head">Статус</th>
+                    <th id="date_head">Дата приема на работу</th>
+                    <th id="dele">Удаление</th>
+
+                </thead>
+                <tr class="item" :id="index"  v-for="(item, index) in getData">
+                    <template v-if='!item.isEditing'>
+
+                        <td class="id">{{index+1}}</td> 
+                        <td class="surname" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_surname'" :value="item.surname" @keyup.enter="on_Enter_Input(item,item.id+'_surname','surname',index)"></td>
+                        <td class="name" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_name'" :value="item.name" @keyup.enter="on_Enter_Input(item,item.id+'_name','name',index)"></td>
+                        <td class="secondname" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_secondname'" :value="item.secondname" @keyup.enter="on_Enter_Input(item,item.id+'_secondname','secondname',index)"></td>
+                        <td class="spec" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_spec'" :value="item.spec" @keyup.enter="on_Enter_Input(item,item.id+'_spec','spec',index)"></td>
+                        <td class="salary" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_salary'" :value="item.salary" @keyup.enter="on_Enter_Input(item,item.id+'_salary','salary',index)"></td>
+                        <td class="status" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_status'" :value="item.status" @keyup.enter="on_Enter_Input(item,item.id+'_status','status',index)"></td>
+                        <td class="date" v-on:click="on_edit(item,index)" ><input type="text" :id="item.id+'_date_employed'" :value="item.date_employed" @keyup.enter="on_Enter_Input(item,item.id+'_date_employed','date_employed',index)"></td>
+                        <td id="delete"><a v-on:click="_delete(index)"><img src="../image/cross.jpg" alt="Удалить" width="20px" height="20px"></a></td>
+                    </template>
+                    <template v-if='item.isEditing'>
+
+                            <td class="id">{{index+1}}</td> 
+                            <td class="surname"><input type="text" id="surname" :value="item.surname" @keyup.enter="on_Enter_Input(item,'surname')" readonly></td>
+                            <td class="name"><input type="text" id="name" :value="item.name" @keyup.enter="on_Enter_Input(item,'name')" readonly></td>
+                            <td class="secondname"><input type="text" id="secondname" :value="item.secondname" @keyup.enter="on_Enter_Input(item,'secondname')" readonly></td>
+                            <td class="spec"><input type="text" id="spec" :value="item.spec" @keyup.enter="on_Enter_Input(item,'spec')" readonly></td>
+                            <td class="salary"><input type="text" id="salary" :value="item.salary" @keyup.enter="on_Enter_Input(item,'salary')" readonly></td>
+                            <td class="status"><input type="text" id="status" :value="item.status" @keyup.enter="on_Enter_Input(item,'status')" readonly></td>
+                            <td class="date"><input type="text" id="date_employed" :value="item.date_employed" @keyup.enter="on_Enter_Input(item,'date_employed')" readonly></td>
+                            <td id="delete"><button><img src="../image/cross.jpg" alt="" width="20px" height="20px"></button></td>
+                    </template>
+                    
+                </tr>
+
+            </table>
+            
+
+
+        </div>
+        <script type="text/javascript" src='js/vue.js'></script>
+        <script type="text/javascript" src="js/vuex.js"></script>
+        <script type="text/javascript" src="../store/table_modules/data.js"></script>
+        <script type="text/javascript" src="../store/store.js"></script>
+        <script type="text/javascript" src="js/forms.js"></script>
+        <script type="text/javascript" src='js/handler.js'></script>
+    </body>
+</html>

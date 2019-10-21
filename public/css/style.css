@@ -1,0 +1,49 @@
+#app{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+table{
+    width: 1200px;
+
+    border: 0px solid black;
+    grid-column: 1/1;
+    grid-row: 1;
+    box-shadow: 0 0 0 3px rgba(0,0,0,2%);
+}
+th{
+    border: 0px;
+}
+td.id{
+    background-color: azure;
+}
+tr>td>input{
+    border: 0px;
+}
+
+#creation_form{
+    grid-column: 1/1;
+    grid-row: 2;
+}
+tbody>tr>:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(0,0,0,3%);
+}
+input:hover{
+    cursor: pointer;
+}
+tr.edit_panel:hover{
+    cursor:default;
+}
+
+a#delete:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(0,0,0,3%);
+}
+a#creation_button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(0,0,0,3%);
+
+}
