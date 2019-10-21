@@ -56,25 +56,7 @@ var data = {
                         break;
                     default:
                         break;
-                }   
-                
-                /*
-                if(local_table!=null&&local_table.changed==rcvd){
-                    console.log('local upl',JSON.parse(JSON.stringify(local_table)));
-                    context.commit('update_data',local_table);
-                }
-                else if(local_table.changed!=rcvd&&typeof(local_table.changed)==typeof(rcvd)){
-                    console.log('req')
-                    web.send(
-                        JSON.stringify({"head":'get_table',"data":"null"})
-                        );
-                }else if(typeof(rcvd)==typeof(JSON)&&local_table.changed!=rcvd.changed){
-                        //console.log(local_table.changed);
-                        localStorage.removeItem('local_table');
-                        localStorage.setItem("local_table",JSON.stringify(rcvd));
-                        context.commit('update_data',rcvd)
-                }*/
-                    //console.log(tab_data);                    
+                }                     
             };
         },
         begin_editing_user(context, user){

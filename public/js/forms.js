@@ -60,7 +60,7 @@ function _create_panel(){
                         <label>Должность</label><input id="spec" value="">
                         <label>Оклад</label><input id="salary" value="">
                         <label>Статус</label><input id="status" value="">
-                        <label>Дата приема на работу</label><input id="date" value="">
+                        <label>Дата приема на работу</label><input id="date"  value="">
                         <button id="sumbit_edit" v-on:click='sumbit_create("create_user_panel")'>Сохранить</button>
                     </div>`,
         store,

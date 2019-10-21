@@ -3,7 +3,7 @@
 var app = new Vue({
     el:"#app",
     store:store,
-    computed:Vuex.mapGetters(['getData','get_actual','is_editing','get_back_work']),
+    computed:Vuex.mapGetters(['getData','get_actual','is_editing']),
     methods:{
         ...Vuex.mapActions(['append_data','begin_editing_user','end_edit','delete_user','add_unsaved_rows','remove_unsaved_rows']),
         on_Enter_Input(item,id,key,index){
