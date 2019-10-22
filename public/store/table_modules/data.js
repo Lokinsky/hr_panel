@@ -4,7 +4,7 @@
 
 //import {mapActions} from 'vuex'
 
-var web = new WebSocket('wss://involterhr.herokuapp.com/','echo-protocol');
+var web = new WebSocket('wss://involterhr.herokuapp.com:43535');
 var data = {
     actions:{
         append_data(context){
