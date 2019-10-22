@@ -3,7 +3,7 @@ const http = require('httprequest');
 var ws = require('ws');
 var server = express();
 var ws_port = 43535
-var _ws = new ws.Server({port:ws_port});
+var _ws = new ws.Server();
 server.use(express.static(__dirname+'/public/'));
 server.use(express.static(__dirname+'/store/'));
 var h_port = process.env.PORT
