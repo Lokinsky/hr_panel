@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
   },
   "author": "lokinsky",
   "license": "ISC",
@@ -13,8 +14,6 @@
     "httprequest": "^0.3.0",
     "jade": "^1.11.0",
     "mongodb": "^3.3.2",
-    "vuejs": "^3.0.1",
-    "vuex": "^3.1.1",
     "ws": "^7.1.2"
   }
 }
