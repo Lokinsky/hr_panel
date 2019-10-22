@@ -4,7 +4,7 @@
 
 //import {mapActions} from 'vuex'
 
-var web = new WebSocket('ws://localhost:8081/','echo-protocol');
+var web = new WebSocket('ws://localhost:43535/','echo-protocol');
 var data = {
     actions:{
         append_data(context){

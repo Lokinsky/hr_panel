@@ -2,9 +2,11 @@ const express = require('express');
 const http = require('httprequest');
 var ws = require('ws');
 var server = express();
-var _ws = new ws.Server({port:8081});
+var ws_port = 43535
+var _ws = new ws.Server({port:ws_port});
 server.use(express.static(__dirname+'/public/'));
 server.use(express.static(__dirname+'/store/'));
+var h_port = process.env.PORT
 
 var clients = {};
 
@@ -194,6 +196,9 @@ function send_back(head,data,id_client){
 
 }
 
-server.listen(8080,'192.168.1.102',()=>{
+//server.listen(8080,'192.168.1.102',()=>{
     //console.log('server is running..');
-});
+//});
+server.listen(h_port,()=>{
+    console.log('server is running..');
+})
