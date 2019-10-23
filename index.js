@@ -66,7 +66,8 @@ server.get('/',(req,res)=>{
 
 server.get('/main',(req,res,)=>{
     console.log(req.ip)
-    res.sendFile(__dirname+'/public/html/main.html',(err)=>{});
+    res.setHeader("Connection","close connection")
+    res.sendFile(__dirname+'/public/html/main.html',(err)=>{res.end()});
 
 });
 
